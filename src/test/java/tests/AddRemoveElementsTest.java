@@ -46,9 +46,6 @@ public class AddRemoveElementsTest {
         List<WebElement> countElements;
         for (int i = 1; i <= 3;i++) {
             addElementButton.click();
-            deleteButton = driver.findElement(By.xpath("//*[@id='elements']/*[" + i + "]" ));
-            isDeleteButtonDisplayed = deleteButton.isDisplayed();
-            Assert.assertTrue(isDeleteButtonDisplayed, "Button " + i + " is not displayed");
         }
         countElements = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
         int numberOfElementsBefore = countElements.size();

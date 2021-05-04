@@ -19,8 +19,7 @@ public class CheckboxesTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox;
-        checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][1]"));
+        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][1]"));
         Assert.assertTrue(!checkbox.isSelected(),"First checkbox is checked");
         driver.quit();
     }
@@ -33,8 +32,7 @@ public class CheckboxesTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox;
-        checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][1]"));
+        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][1]"));
         checkbox.click();
         Assert.assertTrue(checkbox.isSelected(),"First checkbox is unchecked");
         driver.quit();
@@ -48,8 +46,7 @@ public class CheckboxesTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox;
-        checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][2]"));
+        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][2]"));
         Assert.assertTrue(checkbox.isSelected(),"Second checkbox is unchecked");
         driver.quit();
     }
@@ -62,8 +59,7 @@ public class CheckboxesTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox;
-        checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][2]"));
+        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][2]"));
         checkbox.click();
         Assert.assertTrue(!checkbox.isSelected(),"First checkbox is checked");
         driver.quit();

@@ -24,15 +24,15 @@ public class HoverTest {
 
         driver.get("http://the-internet.herokuapp.com/hovers");
 
-        WebElement avatar = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/img"));
+        WebElement avatar = driver.findElement(By.xpath("//*[@id='content']/div/div[1]/img"));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(avatar).perform();
-        WebElement username = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/h5"));
+        WebElement username = driver.findElement(By.xpath("//*[@id='content']/div/div[1]/div/h5"));
         String text = username.getText();
         Assert.assertEquals(text, "name: user1");
 
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[1]/div/a")).click();
+        driver.findElement(By.xpath("//*[@id='content']/div/div[1]/div/a")).click();
         String currentUrl = driver.getCurrentUrl();
         HttpURLConnection connection = (HttpURLConnection) new URL(currentUrl).openConnection();
         connection.setRequestMethod("HEAD");
@@ -52,15 +52,15 @@ public class HoverTest {
 
         driver.get("http://the-internet.herokuapp.com/hovers");
 
-        WebElement avatar = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/img"));
+        WebElement avatar = driver.findElement(By.xpath("//*[@id='content']/div/div[2]/img"));
 
         Actions actions = new Actions(driver);
         actions.moveToElement(avatar).perform();
-        WebElement username = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/h5"));
+        WebElement username = driver.findElement(By.xpath("//*[@id='content']/div/div[2]/div/h5"));
         String text = username.getText();
         Assert.assertEquals(text, "name: user2");
 
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/a")).click();
+        driver.findElement(By.xpath("//*[@id='content']/div/div[2]/div/a")).click();
         String currentUrl = driver.getCurrentUrl();
         HttpURLConnection connection = (HttpURLConnection) new URL(currentUrl).openConnection();
         connection.setRequestMethod("HEAD");
