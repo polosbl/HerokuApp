@@ -42,7 +42,6 @@ public class AddRemoveElementsTest {
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         WebElement addElementButton = driver.findElement(By.xpath("//button[text()='Add Element']"));
         WebElement deleteButton;
-        boolean isDeleteButtonDisplayed;
         List<WebElement> countElements;
         for (int i = 1; i <= 3;i++) {
             addElementButton.click();
