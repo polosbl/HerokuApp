@@ -13,12 +13,11 @@ import java.util.concurrent.TimeUnit;
 public class AddRemoveElementsTest {
 
     @Test
-    public void AddElementsTest() {
+    public void addElementsTest() {
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         WebElement addElementButton = driver.findElement(By.xpath("//button[text()='Add Element']"));
         WebElement deleteButton;
@@ -38,7 +37,6 @@ public class AddRemoveElementsTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
         WebElement addElementButton = driver.findElement(By.xpath("//button[text()='Add Element']"));
         WebElement deleteButton;
@@ -48,12 +46,10 @@ public class AddRemoveElementsTest {
         }
         countElements = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
         int numberOfElementsBefore = countElements.size();
-
         deleteButton = driver.findElement(By.xpath("//*[@id='elements']/*[3]" ));
         deleteButton.click();
         countElements = driver.findElements(By.xpath("//*[@onclick='deleteElement()']"));
         int numberOfElementsAfter = countElements.size();
-
         Assert.assertTrue(numberOfElementsAfter < numberOfElementsBefore,
                 "Incorrect number of elements");
         driver.quit();

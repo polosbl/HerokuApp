@@ -17,7 +17,6 @@ public class TyposTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         driver.get("http://the-internet.herokuapp.com/typos");
         WebElement secondParagraph = driver.findElement(By.xpath("//*[@class='example']/p[2]"));
         String actualText = secondParagraph.getText();

@@ -18,7 +18,6 @@ public class InputsTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         driver.get("http://the-internet.herokuapp.com/inputs");
         int randomNumber = (int) (Math.random() * 1000);
         WebElement inputField = driver.findElement(By.xpath("//*[@type='number']"));
@@ -34,7 +33,6 @@ public class InputsTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         driver.get("http://the-internet.herokuapp.com/inputs");
         int randomNumber = (int) (Math.random() * 1000);
         WebElement inputField = driver.findElement(By.xpath("//*[@type='number']"));
@@ -51,7 +49,6 @@ public class InputsTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         driver.get("http://the-internet.herokuapp.com/inputs");
         int randomNumber = (int) (Math.random() * 1000);
         WebElement inputField = driver.findElement(By.xpath("//*[@type='number']"));
@@ -68,7 +65,6 @@ public class InputsTest {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
         driver.get("http://the-internet.herokuapp.com/inputs");
         WebElement inputField = driver.findElement(By.xpath("//*[@type='number']"));
         inputField.sendKeys("Test text");
