@@ -7,8 +7,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
 
-import java.util.concurrent.TimeUnit;
-
 public class BaseTest implements ITestConstants {
     WebDriver driver;
     AddRemoveElementsPage addRemoveElementsPage;
@@ -17,17 +15,21 @@ public class BaseTest implements ITestConstants {
     HoverPage hoverPage;
     InputPage inputPage;
     TyposPage typosPage;
+    ContextMenuPage contextMenuPage;
+    DynamicControlsPage dynamicControlsPage;
+    FileUploadPage fileUploadPage;
+    FramesPage framesPage;
 
     @BeforeMethod
     public void initTest() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         initPages();
     }
 
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void endTest() {
         driver.quit();
     }
@@ -39,5 +41,9 @@ public class BaseTest implements ITestConstants {
         hoverPage = new HoverPage(driver);
         inputPage = new InputPage(driver);
         typosPage = new TyposPage(driver);
+        contextMenuPage = new ContextMenuPage(driver);
+        dynamicControlsPage = new DynamicControlsPage(driver);
+        fileUploadPage = new FileUploadPage(driver);
+        framesPage = new FramesPage(driver);
     }
 }
