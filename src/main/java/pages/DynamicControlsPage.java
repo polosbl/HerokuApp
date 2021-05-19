@@ -69,5 +69,4 @@ public class DynamicControlsPage extends BasePage {
     public String getInputMessageText() {
         return driver.findElement(INPUT_EXAMPLE_MESSAGE_TEXT).getText();
     }
-
 }

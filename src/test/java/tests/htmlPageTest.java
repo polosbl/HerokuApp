@@ -11,6 +11,8 @@ import java.util.concurrent.TimeUnit;
 
 public class htmlPageTest {
 
+    //TODO: Rework using POM
+
     @Test
     public void checkParagraphTextTest() {
         System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
