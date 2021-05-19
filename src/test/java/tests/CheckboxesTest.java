@@ -1,63 +1,33 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
-public class CheckboxesTest {
+public class CheckboxesTest extends BaseTest {
 
     @Test
     public void firstCheckboxIsUncheckedTest() {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][1]"));
-        Assert.assertTrue(!checkbox.isSelected(),"First checkbox is checked");
-        driver.quit();
+        checkboxesPage.openPage(CHECKBOXES_PAGE_URL);
+        Assert.assertFalse(checkboxesPage.isNeededChckboxSelected("1"),"First checkbox is checked");
     }
 
     @Test
     public void checkFirstCheckboxTest() {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][1]"));
-        checkbox.click();
-        Assert.assertTrue(checkbox.isSelected(),"First checkbox is unchecked");
-        driver.quit();
+        checkboxesPage.openPage(CHECKBOXES_PAGE_URL);
+        checkboxesPage.clickOnCheckbox("1");
+        Assert.assertTrue(checkboxesPage.isNeededChckboxSelected("1"),"First checkbox is unchecked");
     }
 
     @Test
     public void secondCheckboxIsCheckedTest() {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][2]"));
-        Assert.assertTrue(checkbox.isSelected(),"Second checkbox is unchecked");
-        driver.quit();
+        checkboxesPage.openPage(CHECKBOXES_PAGE_URL);
+        Assert.assertTrue(checkboxesPage.isNeededChckboxSelected("2"),"Second checkbox is unchecked");
     }
 
     @Test
     public void uncheckSecondCheckboxTest() {
-        System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.get("http://the-internet.herokuapp.com/checkboxes");
-        WebElement checkbox = driver.findElement(By.xpath("//*[@id='checkboxes']/*[@type='checkbox'][2]"));
-        checkbox.click();
-        Assert.assertTrue(!checkbox.isSelected(),"First checkbox is checked");
-        driver.quit();
+        checkboxesPage.openPage(CHECKBOXES_PAGE_URL);
+        checkboxesPage.clickOnCheckbox("2");
+        Assert.assertFalse(checkboxesPage.isNeededChckboxSelected("2"),"Second checkbox is checked");
     }
 }
