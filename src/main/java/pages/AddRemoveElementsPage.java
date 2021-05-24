@@ -21,13 +21,11 @@ public class AddRemoveElementsPage extends BasePage {
         driver.findElement(By.xpath(String.format(DELETE_ELEMENT_BUTTON, buttonNumber))).click();
     }
 
-    public int countAllElements() {
+    public int getCountOfDeleteButtons() {
         return driver.findElements(ALL_DELETE_ELEMENT_BUTTONS).size();
     }
 
     public boolean isNthElementDisplayed(String buttonNumber) {
         return driver.findElement(By.xpath(String.format(DELETE_ELEMENT_BUTTON, buttonNumber))).isDisplayed();
     }
-
-
 }

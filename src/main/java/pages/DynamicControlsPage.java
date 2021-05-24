@@ -29,9 +29,8 @@ public class DynamicControlsPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(CHECKBOX));
     }
 
-    public boolean isCheckboxInvisiable() {
-        int numberOfElements = driver.findElements(CHECKBOX).size();
-        return numberOfElements == 0;
+    public boolean isCheckboxInvisible() {
+        return driver.findElements(CHECKBOX).isEmpty();
     }
 
     public boolean isCheckboxDisplayed() {

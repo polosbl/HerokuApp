@@ -12,11 +12,10 @@ public class FileUploadPage extends BasePage {
 
     private static final By UPLOAD_BUTTON = By.xpath("//*[@id='file-submit']");
     private static final By FILE_INPUT_FIELD = By.xpath("//*[@id='file-upload']");
-    private static final String PATH_TO_FILE = "/home/aleksandr/Desktop/Aang";
     private static final By UPLOADED_FILE_NAME = By.xpath("//*[@id='uploaded-files']");
 
-    public void uploadFile() {
-        driver.findElement(FILE_INPUT_FIELD).sendKeys(PATH_TO_FILE);
+    public void uploadFile(String pathToFile) {
+        driver.findElement(FILE_INPUT_FIELD).sendKeys(pathToFile);
     }
 
     public void clickUploadButton() {

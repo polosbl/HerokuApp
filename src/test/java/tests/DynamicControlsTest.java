@@ -24,7 +24,7 @@ public class DynamicControlsTest extends BaseTest {
         dynamicControlsPage.openPage(DYNAMIC_CONTROLS_PAGE_URL);
         dynamicControlsPage.clickRemoveButton();
         dynamicControlsPage.waitUntilCheckboxInvisibility();
-        Assert.assertTrue(dynamicControlsPage.isCheckboxInvisiable());
+        Assert.assertTrue(dynamicControlsPage.isCheckboxInvisible());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class DynamicControlsTest extends BaseTest {
         dynamicControlsPage.waitUntilCheckboxInvisibility();
         dynamicControlsPage.clickAddButton();
         dynamicControlsPage.waitUntilCheckboxVisibility();
-        Assert.assertFalse(dynamicControlsPage.isCheckboxInvisiable());
+        Assert.assertFalse(dynamicControlsPage.isCheckboxInvisible());
     }
 
     @Test

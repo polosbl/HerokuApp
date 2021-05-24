@@ -16,9 +16,9 @@ public class BasePage {
     public int generateRandomInteger() {
         return (int) (Math.random() * 1000);
     }
+
     public String convertIntegerToString (int integer) {
         return Integer.toString(integer);
     }
-
 }
 

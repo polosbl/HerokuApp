@@ -25,7 +25,7 @@ public class FramesPage extends BasePage {
         driver.findElement(IFRAME_INPUT_FIELD).sendKeys(text);
     }
 
-    public void waitUntilIFrameIsVisiable() {
+    public void waitUntilIFrameIsVisible() {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(IFRAME)));
     }
 

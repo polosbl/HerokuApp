@@ -19,9 +19,9 @@ public class AddRemoveElementsTest extends BaseTest{
         addRemoveElementsPage.addElement();
         addRemoveElementsPage.addElement();
         addRemoveElementsPage.addElement();
-        int numberOfElementsBefore = addRemoveElementsPage.countAllElements();
+        int numberOfElementsBefore = addRemoveElementsPage.getCountOfDeleteButtons();
         addRemoveElementsPage.deleteNthButton("3");
-        int numberOfElementsAfter = addRemoveElementsPage.countAllElements();
+        int numberOfElementsAfter = addRemoveElementsPage.getCountOfDeleteButtons();
         Assert.assertTrue(numberOfElementsAfter == numberOfElementsBefore - 1,
                 "Incorrect number of elements");
     }

@@ -15,8 +15,7 @@ public class CheckboxesPage extends BasePage {
         driver.findElement(By.xpath(String.format(NEEDED_CHECKBOX,neededCheckbox))).click();
     }
 
-    public boolean isNeededChckboxSelected(String neededCheckbox) {
+    public boolean isNeededCheckboxSelected(String neededCheckbox) {
         return driver.findElement(By.xpath(String.format(NEEDED_CHECKBOX,neededCheckbox))).isSelected();
     }
-
 }
